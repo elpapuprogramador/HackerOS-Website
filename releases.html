@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerOS - Releases</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1C2526;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #121212;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #B0B0B0;
+        }
+
+        .releases-section {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .releases-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .release {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #2F3A44;
+            border-radius: 10px;
+        }
+
+        .release h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #121212;
+            padding: 20px;
+            text-align: center;
+            color: #B0B0B0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HackerOS</div>
+            <ul>
+                <li><a href="Home-page.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="releases.html">Releases</a></li>
+                <li><a href="about-hackeros.html">About HackerOS</a></li>
+                <li><a href="hackeros-team.html">HackerOS Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="releases-section">
+        <h1>HackerOS Releases</h1>
+        <div class="release">
+            <h2>HackerOS V2.9</h2>
+            <p>Latest stable release with improved performance and security features.</p>
+        </div>
+        <div class="release">
+            <h2>HackerOS V2.8</h2>
+            <p>Previous release with enhanced tools for developers.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
