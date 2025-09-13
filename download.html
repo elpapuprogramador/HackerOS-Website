@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerOS - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1C2526;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #121212;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #B0B0B0;
+        }
+
+        .download-section {
+            max-width: 1200px;
+            margin: 120px auto 50px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .download-section h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .download-option {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: #2F3A44;
+            border-radius: 10px;
+        }
+
+        .download-option h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #B0B0B0;
+            color: #121212;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #FFFFFF;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #121212;
+            padding: 20px;
+            text-align: center;
+            color: #B0B0B0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">HackerOS</div>
+            <ul>
+                <li><a href="Home-page.html">Home</a></li>
+                <li><a href="download.html">Download</a></li>
+                <li><a href="releases.html">Releases</a></li>
+                <li><a href="about-hackeros.html">About HackerOS</a></li>
+                <li><a href="hackeros-team.html">HackerOS Team</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="download-section">
+        <h1>Download HackerOS</h1>
+
+        <div class="download-option">
+            <h2>HackerOS Official</h2>
+            <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V2.9.iso/download" class="btn">Download from SourceForge</a>
+            <a href="https://mega.nz/file/JKsHHYgD#8Sedb7njY7Qhl2xMJa6zv6e21vtwApx9b_TNaUN4F2w" class="btn">Download from Mega.nz</a>
+            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Download from Google Drive</a>
+        </div>
+
+        <div class="download-option">
+            <h2>HackerOS Nvidia</h2>
+            <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V2.9.iso/download" class="btn">Download from SourceForge</a>
+            <a href="https://mega.nz/file/JKsHHYgD#8Sedb7njY7Qhl2xMJa6zv6e21vtwApx9b_TNaUN4F2w" class="btn">Download from Mega.nz</a>
+            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Download from Google Drive</a>
+        </div>
+
+        <div class="download-option">
+            <h2>HackerOS Cybersecurity</h2>
+            <p>Coming soon...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+    </footer>
+</body>
+</html>
