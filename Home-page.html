@@ -11,13 +11,11 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
         body {
             background-color: #1C2526;
             color: #FFFFFF;
             line-height: 1.6;
         }
-
         header {
             background-color: #121212;
             padding: 20px 0;
@@ -25,9 +23,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s ease;
         }
-
+        header:hover {
+            background-color: #1A1A1A;
+        }
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,30 +36,39 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFFFFF;
+        nav .logo img {
+            height: 40px;
+            width: auto;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
-
         nav ul li a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
-
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #B0B0B0;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
         nav ul li a:hover {
             color: #B0B0B0;
+            transform: translateY(-2px);
         }
-
         .hero {
             height: 100vh;
             display: flex;
@@ -66,20 +76,30 @@
             align-items: center;
             text-align: center;
             background: linear-gradient(45deg, #1C2526, #2F3A44);
+            position: relative;
+            overflow: hidden;
         }
-
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: -1;
+        }
         .hero-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
             color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
         .hero-content p {
             font-size: 20px;
             margin-bottom: 30px;
             color: #B0B0B0;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -88,14 +108,13 @@
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
-
         .btn:hover {
             background-color: #FFFFFF;
             transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255,255,255,0.2);
         }
-
         footer {
             background-color: #121212;
             padding: 20px;
@@ -104,33 +123,49 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
         }
     </style>
+    <script>
+        // Language detection
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('pl')) {
+                document.documentElement.lang = 'pl';
+                // Polish content (already set)
+            } else {
+                document.documentElement.lang = 'en';
+                // Switch to English
+                document.querySelector('.hero-content h1').textContent = 'Welcome to HackerOS';
+                document.querySelector('.hero-content p').textContent = 'A powerful, Debian-based operating system designed for enthusiasts and professionals.';
+                document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">HackerOS</div>
+            <div class="logo"><img src="HackerOS.png" alt="HackerOS Logo"></div>
             <ul>
                 <li><a href="Home-page.html">Home</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="releases.html">Releases</a></li>
                 <li><a href="about-hackeros.html">About HackerOS</a></li>
                 <li><a href="hackeros-team.html">HackerOS Team</a></li>
+                <li><a href="write-to-us.html">Write to Us</a></li>
             </ul>
         </nav>
     </header>
-
     <section class="hero">
         <div class="hero-content">
-            <h1>Welcome to HackerOS</h1>
-            <p>A powerful, Debian-based operating system designed for enthusiasts and professionals.</p>
-            <a href="download.html" class="btn">Download Now</a>
+            <h1>Witaj w HackerOS</h1>
+            <p>Potężny system operacyjny oparty na Debianie, zaprojektowany dla entuzjastów i profesjonalistów.</p>
+            <a href="download.html" class="btn">Pobierz Teraz</a>
         </div>
     </section>
-
     <footer>
-        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+        <p>&copy; 2025 HackerOS. Wszelkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
