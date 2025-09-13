@@ -11,13 +11,11 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
         body {
             background-color: #1C2526;
             color: #FFFFFF;
             line-height: 1.6;
         }
-
         header {
             background-color: #121212;
             padding: 20px 0;
@@ -25,9 +23,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s ease;
         }
-
+        header:hover {
+            background-color: #1A1A1A;
+        }
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,48 +36,58 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFFFFF;
+        nav .logo img {
+            height: 40px;
+            width: auto;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
-
         nav ul li a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
-
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #B0B0B0;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
         nav ul li a:hover {
             color: #B0B0B0;
+            transform: translateY(-2px);
         }
-
         .about-section {
             max-width: 1200px;
             margin: 120px auto 50px;
             padding: 20px;
             text-align: center;
+            background-color: #2F3A44;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-
         .about-section h1 {
             font-size: 36px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
         .about-section p {
             font-size: 18px;
             color: #B0B0B0;
             margin-bottom: 20px;
         }
-
         footer {
             background-color: #121212;
             padding: 20px;
@@ -85,31 +96,46 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('pl')) {
+                document.documentElement.lang = 'pl';
+            } else {
+                document.documentElement.lang = 'en';
+                document.querySelector('.about-section h1').textContent = 'About HackerOS';
+                const ps = document.querySelectorAll('.about-section p');
+                ps[0].textContent = 'HackerOS is based on Debian Testing distribution, uses xanmod lts kernel and is intended for regular users, gamers and cybersecurity enthusiasts.';
+                ps[1].textContent = 'Our mission is to create an efficient and user-friendly environment for exploring the world of technology, security and games.';
+                document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">HackerOS</div>
+            <div class="logo"><img src="HackerOS.png" alt="HackerOS Logo"></div>
             <ul>
                 <li><a href="Home-page.html">Home</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="releases.html">Releases</a></li>
                 <li><a href="about-hackeros.html">About HackerOS</a></li>
                 <li><a href="hackeros-team.html">HackerOS Team</a></li>
+                <li><a href="write-to-us.html">Write to Us</a></li>
             </ul>
         </nav>
     </header>
-
     <section class="about-section">
-        <h1>About HackerOS</h1>
+        <h1>O HackerOS</h1>
         <p>HackerOS bazuje na dystrybucji Debian Testing, wykorzystuje jądro xanmod lts i jest przeznaczony dla zwykłych użytkowników, graczy i entuzjastów cyberbezpieczeństwa.</p>
         <p>Naszą misją jest stworzenie wydajnego i przyjaznego użytkownikowi środowiska do eksploracji świata technologii, bezpieczeństwa i gier.</p>
     </section>
-
     <footer>
-        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+        <p>&copy; 2025 HackerOS. Wszelkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
