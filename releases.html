@@ -11,13 +11,11 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
         body {
             background-color: #1C2526;
             color: #FFFFFF;
             line-height: 1.6;
         }
-
         header {
             background-color: #121212;
             padding: 20px 0;
@@ -25,9 +23,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s ease;
         }
-
+        header:hover {
+            background-color: #1A1A1A;
+        }
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,54 +36,86 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFFFFF;
+        nav .logo img {
+            height: 40px;
+            width: auto;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
-
         nav ul li a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
-
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #B0B0B0;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
         nav ul li a:hover {
             color: #B0B0B0;
+            transform: translateY(-2px);
         }
-
         .releases-section {
             max-width: 1200px;
             margin: 120px auto 50px;
             padding: 20px;
             text-align: center;
         }
-
         .releases-section h1 {
             font-size: 36px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
         .release {
             margin: 20px 0;
             padding: 20px;
             background-color: #2F3A44;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: left;
         }
-
+        .release:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
         .release h2 {
             font-size: 24px;
             margin-bottom: 10px;
+            text-align: center;
         }
-
+        .release h3 {
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #B0B0B0;
+        }
+        .release ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #B0B0B0;
+        }
+        .release ul li {
+            margin-bottom: 5px;
+        }
+        .release p {
+            color: #B0B0B0;
+            margin-bottom: 10px;
+        }
         footer {
             background-color: #121212;
             padding: 20px;
@@ -91,37 +124,137 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('pl')) {
+                document.documentElement.lang = 'pl';
+            } else {
+                document.documentElement.lang = 'en';
+                document.querySelector('.releases-section h1').textContent = 'HackerOS Releases';
+
+                // Update for V3.0
+                const releases = document.querySelectorAll('.release');
+                releases[0].querySelector('h2').textContent = 'HackerOS V3.0';
+                releases[0].querySelector('p').textContent = 'The latest major release with significant upgrades in performance, security, and compatibility.';
+                releases[0].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v3Lis = releases[0].querySelectorAll('ul')[0].querySelectorAll('li');
+                v3Lis[0].textContent = 'HackerOS Official: 13.09.2025';
+                v3Lis[1].textContent = 'HackerOS Nvidia: 13.09.2025';
+                v3Lis[2].textContent = 'HackerOS Cybersecurity: 13.09.2025';
+                releases[0].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v3Changes = releases[0].querySelectorAll('ul')[1].querySelectorAll('li');
+                v3Changes[0].textContent = 'Upgraded to latest Debian Testing base.';
+                v3Changes[1].textContent = 'Improved Nvidia driver support for better gaming performance.';
+                v3Changes[2].textContent = 'Added advanced cybersecurity tools like enhanced firewalls and intrusion detection.';
+                v3Changes[3].textContent = 'Optimized kernel for faster boot times and reduced resource usage.';
+                v3Changes[4].textContent = 'Bug fixes and stability improvements from user feedback.';
+
+                // Update for V2.9
+                releases[1].querySelector('h2').textContent = 'HackerOS V2.9';
+                releases[1].querySelector('p').textContent = 'Latest stable release with improved performance and security features.';
+                releases[1].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v29Lis = releases[1].querySelectorAll('ul')[0].querySelectorAll('li');
+                v29Lis[0].textContent = 'HackerOS Official: 01.01.2025';
+                v29Lis[1].textContent = 'HackerOS Nvidia: 01.01.2025';
+                v29Lis[2].textContent = 'HackerOS Cybersecurity: 01.01.2025';
+                releases[1].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v29Changes = releases[1].querySelectorAll('ul')[1].querySelectorAll('li');
+                v29Changes[0].textContent = 'Enhanced security patches.';
+                v29Changes[1].textContent = 'Improved compatibility with newer hardware.';
+                v29Changes[2].textContent = 'Added new developer tools.';
+
+                // Update for V2.8
+                releases[2].querySelector('h2').textContent = 'HackerOS V2.8';
+                releases[2].querySelector('p').textContent = 'Previous release with enhanced tools for developers.';
+                releases[2].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v28Lis = releases[2].querySelectorAll('ul')[0].querySelectorAll('li');
+                v28Lis[0].textContent = 'HackerOS Official: 01.06.2024';
+                v28Lis[1].textContent = 'HackerOS Nvidia: 01.06.2024';
+                v28Lis[2].textContent = 'HackerOS Cybersecurity: 01.06.2024';
+                releases[2].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v28Changes = releases[2].querySelectorAll('ul')[1].querySelectorAll('li');
+                v28Changes[0].textContent = 'Introduced new development environments.';
+                v28Changes[1].textContent = 'Fixed known bugs from previous versions.';
+                v28Changes[2].textContent = 'Improved user interface elements.';
+
+                document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">HackerOS</div>
+            <div class="logo"><img src="HackerOS.png" alt="HackerOS Logo"></div>
             <ul>
                 <li><a href="Home-page.html">Home</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="releases.html">Releases</a></li>
                 <li><a href="about-hackeros.html">About HackerOS</a></li>
                 <li><a href="hackeros-team.html">HackerOS Team</a></li>
+                <li><a href="write-to-us.html">Write to Us</a></li>
             </ul>
         </nav>
     </header>
-
     <section class="releases-section">
-        <h1>HackerOS Releases</h1>
+        <h1>Wydania HackerOS</h1>
+        <div class="release">
+            <h2>HackerOS V3.0</h2>
+            <p>Najnowsza główna wersja z znacznymi ulepszeniami w wydajności, bezpieczeństwie i kompatybilności.</p>
+            <h3>Data wydania:</h3>
+            <ul>
+                <li>HackerOS Official: 13.09.2025</li>
+                <li>HackerOS Nvidia: 13.09.2025</li>
+                <li>HackerOS Cybersecurity: 13.09.2025</li>
+            </ul>
+            <h3>Changelog:</h3>
+            <ul>
+                <li>Zaktualizowano bazę do najnowszego Debian Testing.</li>
+                <li>Poprawiono wsparcie dla sterowników Nvidia dla lepszej wydajności w grach.</li>
+                <li>Dodano zaawansowane narzędzia cybersecurity, takie jak ulepszone firewalle i wykrywanie intruzów.</li>
+                <li>Zoptymalizowano jądro dla szybszego uruchamiania i mniejszego zużycia zasobów.</li>
+                <li>Poprawki błędów i ulepszenia stabilności na podstawie opinii użytkowników.</li>
+            </ul>
+        </div>
         <div class="release">
             <h2>HackerOS V2.9</h2>
-            <p>Latest stable release with improved performance and security features.</p>
+            <p>Najnowsze stabilne wydanie z ulepszoną wydajnością i funkcjami bezpieczeństwa.</p>
+            <h3>Data wydania:</h3>
+            <ul>
+                <li>HackerOS Official: 01.01.2025</li>
+                <li>HackerOS Nvidia: 01.01.2025</li>
+                <li>HackerOS Cybersecurity: 01.01.2025</li>
+            </ul>
+            <h3>Changelog:</h3>
+            <ul>
+                <li>Ulepszone łatki bezpieczeństwa.</li>
+                <li>Poprawiona kompatybilność z nowszym sprzętem.</li>
+                <li>Dodano nowe narzędzia dla deweloperów.</li>
+            </ul>
         </div>
         <div class="release">
             <h2>HackerOS V2.8</h2>
-            <p>Previous release with enhanced tools for developers.</p>
+            <p>Poprzednie wydanie z ulepszonymi narzędziami dla deweloperów.</p>
+            <h3>Data wydania:</h3>
+            <ul>
+                <li>HackerOS Official: 01.06.2024</li>
+                <li>HackerOS Nvidia: 01.06.2024</li>
+                <li>HackerOS Cybersecurity: 01.06.2024</li>
+            </ul>
+            <h3>Changelog:</h3>
+            <ul>
+                <li>Wprowadzono nowe środowiska deweloperskie.</li>
+                <li>Poprawiono znane błędy z poprzednich wersji.</li>
+                <li>Ulepszono elementy interfejsu użytkownika.</li>
+            </ul>
         </div>
     </section>
-
     <footer>
-        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+        <p>&copy; 2025 HackerOS. Wszelkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
