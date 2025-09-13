@@ -11,13 +11,11 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-
         body {
             background-color: #1C2526;
             color: #FFFFFF;
             line-height: 1.6;
         }
-
         header {
             background-color: #121212;
             padding: 20px 0;
@@ -25,9 +23,12 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s ease;
         }
-
+        header:hover {
+            background-color: #1A1A1A;
+        }
         nav {
             max-width: 1200px;
             margin: 0 auto;
@@ -35,54 +36,66 @@
             justify-content: space-between;
             align-items: center;
         }
-
-        nav .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFFFFF;
+        nav .logo img {
+            height: 40px;
+            width: auto;
         }
-
         nav ul {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
-
         nav ul li a {
             color: #FFFFFF;
             text-decoration: none;
             font-size: 18px;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
         }
-
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #B0B0B0;
+            transition: width 0.3s;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
         nav ul li a:hover {
             color: #B0B0B0;
+            transform: translateY(-2px);
         }
-
         .download-section {
             max-width: 1200px;
             margin: 120px auto 50px;
             padding: 20px;
             text-align: center;
         }
-
         .download-section h1 {
             font-size: 36px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-
         .download-option {
             margin: 20px 0;
             padding: 20px;
             background-color: #2F3A44;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
+        .download-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+        }
         .download-option h2 {
             font-size: 24px;
             margin-bottom: 15px;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -92,14 +105,13 @@
             border-radius: 5px;
             font-weight: bold;
             margin: 10px;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
-
         .btn:hover {
             background-color: #FFFFFF;
             transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255,255,255,0.2);
         }
-
         footer {
             background-color: #121212;
             padding: 20px;
@@ -108,53 +120,78 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.startsWith('pl')) {
+                document.documentElement.lang = 'pl';
+            } else {
+                document.documentElement.lang = 'en';
+                document.querySelector('.download-section h1').textContent = 'Download HackerOS';
+                const h2s = document.querySelectorAll('.download-option h2');
+                h2s[0].textContent = 'HackerOS Official';
+                h2s[1].textContent = 'HackerOS Nvidia';
+                h2s[2].textContent = 'HackerOS Cybersecurity';
+                const btns = document.querySelectorAll('.btn');
+                for (let i = 0; i < btns.length; i++) {
+                    if (btns[i].href.includes('sourceforge')) {
+                        btns[i].textContent = 'Download from SourceForge';
+                    } else if (btns[i].href.includes('mega')) {
+                        btns[i].textContent = 'Download from Mega.nz';
+                    } else if (btns[i].href.includes('drive')) {
+                        btns[i].textContent = 'Download from Google Drive';
+                    } else if (btns[i].href.includes('transfer')) {
+                        btns[i].textContent = 'Download from Transfer.it';
+                    }
+                }
+                document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">HackerOS</div>
+            <div class="logo"><img src="HackerOS.png" alt="HackerOS Logo"></div>
             <ul>
                 <li><a href="Home-page.html">Home</a></li>
                 <li><a href="download.html">Download</a></li>
                 <li><a href="releases.html">Releases</a></li>
                 <li><a href="about-hackeros.html">About HackerOS</a></li>
                 <li><a href="hackeros-team.html">HackerOS Team</a></li>
+                <li><a href="write-to-us.html">Write to Us</a></li>
             </ul>
         </nav>
     </header>
-
     <section class="download-section">
-        <h1>Download HackerOS</h1>
-
-       <div class="download-option">
+        <h1>Pobierz HackerOS</h1>
+        <div class="download-option">
             <h2>HackerOS Official</h2>
             <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V2.9.iso/download" class="btn">Pobierz z SourceForge</a>
             <a href="https://mega.nz/file/QD1UDZrB#JXGaSMQCI4iYxMX-6mDfPBjdAWaBGTM314JfBh5yo9M" class="btn">Pobierz z Mega.nz</a>
             <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Google Drive</a>
-            <a href="https://transfer.it/t/Inbx9X1zmJAI" class="btn">Pobierz z Transer.it</a>
+            <a href="https://transfer.it/t/Inbx9X1zmJAI" class="btn">Pobierz z Transfer.it</a>
         </div>
-
         <div class="download-option">
             <h2>HackerOS Nvidia</h2>
             <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V2.9.iso/download" class="btn">Pobierz z SourceForge</a>
             <a href="https://mega.nz/file/JKsHHYgD#8Sedb7njY7Qhl2xMJa6zv6e21vtwApx9b_TNaUN4F2w" class="btn">Pobierz z Mega.nz</a>
             <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Google Drive</a>
-            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Transer.it</a>
+            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Transfer.it</a>
         </div>
-
-         <div class="download-option">
-            <h2>HackerOS Cybersecuirty</h2>
+        <div class="download-option">
+            <h2>HackerOS Cybersecurity</h2>
             <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V2.9.iso/download" class="btn">Pobierz z SourceForge</a>
             <a href="https://mega.nz/file/JKsHHYgD#8Sedb7njY7Qhl2xMJa6zv6e21vtwApx9b_TNaUN4F2w" class="btn">Pobierz z Mega.nz</a>
             <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Google Drive</a>
-            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Transer.it</a>
+            <a href="https://drive.google.com/file/d/130W7dblGO0_aZ_U2lj8JG236AVe0dH39/view?usp=drive_link" class="btn">Pobierz z Transfer.it</a>
         </div>
     </section>
-
     <footer>
-        <p>&copy; 2025 HackerOS. All rights reserved.</p>
+        <p>&copy; 2025 HackerOS. Wszelkie prawa zastrzeżone.</p>
     </footer>
 </body>
 </html>
