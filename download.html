@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HackerOS - Download</title>
-    <link rel="icon" type="image/png" href="HackerOS.png"> 
+    <link rel="icon" type="image/png" href="HackerOS.png">
     <style>
         * {
             margin: 0;
@@ -97,6 +97,10 @@
             font-size: 24px;
             margin-bottom: 15px;
         }
+        .download-option p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
         .btn {
             display: inline-block;
             padding: 12px 24px;
@@ -134,8 +138,7 @@
                 document.querySelector('.download-section h1').textContent = 'Download HackerOS';
                 const h2s = document.querySelectorAll('.download-option h2');
                 h2s[0].textContent = 'HackerOS Official';
-                h2s[1].textContent = 'HackerOS Nvidia';
-                h2s[2].textContent = 'HackerOS Cybersecurity';
+                h2s[1].textContent = 'HackerOS Cybersecurity';
                 const btns = document.querySelectorAll('.btn');
                 for (let i = 0; i < btns.length; i++) {
                     if (btns[i].href.includes('sourceforge')) {
@@ -171,17 +174,11 @@
         <h1>Pobierz HackerOS</h1>
         <div class="download-option">
             <h2>HackerOS Official</h2>
+            <p>Jeżeli masz kartę graficzną NVIDIA, użyj komendy w systemie HackerOS: <code>setup-nvidia</code></p>
             <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V3.0.iso/download" class="btn">Pobierz z SourceForge</a>
-            <a href="https://mega.nz/file/QD1UDZrB#JXGaSMQCI4iYxMX-6mDfPBjdAWaBGTM314JfBh5yo9M" class="btn">Pobierz z Mega.nz</a>
+            <a href="https://mega.nz/file/RSlHkbyC#mM1fIT8v5swZRxW_YqO6jg7GnBcGHDbfRk0f98AmyI4" class="btn">Pobierz z Mega.nz</a>
             <a href="https://drive.google.com/file/d/1uGSvN1Iiwh38mbh4AD60W_Wtmr4nOV0N/view?usp=sharing" class="btn">Pobierz z Google Drive</a>
-            <a href="https://transfer.it/t/Inbx9X1zmJAI" class="btn">Pobierz z Transfer.it</a>
-        </div>
-        <div class="download-option">
-            <h2>HackerOS Nvidia</h2>
-            <a href="https://sourceforge.net/projects/hackeros/files/HackerOS-V3.0-NVIDIA.iso/download" class="btn">Pobierz z SourceForge</a>
-            <a href="https://mega.nz/file/gSsXiLTZ#eRBifKfKmee0WB4_Jrj75UkMfKAXVqYHdLJSG8I4Phc" class="btn">Pobierz z Mega.nz</a>
-            <a href="https://drive.google.com/file/d/1EJIwAYpdkrO3ANbxefXXY41t6tEutidK/view?usp=sharing" class="btn">Pobierz z Google Drive</a>
-            <a href="https://transfer.it/t/ECeFBW11kTBK" class="btn">Pobierz z Transfer.it</a>
+            <a href="https://transfer.it/t/zV9g8a1VEZLL" class="btn">Pobierz z Transfer.it</a>
         </div>
         <div class="download-option">
             <h2>HackerOS Cybersecurity</h2>
