@@ -79,22 +79,91 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
+        .about-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
         .about-section h1 {
             font-size: 36px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .about-section h2 {
+            font-size: 28px;
+            margin: 30px 0 15px;
+            color: #FFFFFF;
         }
         .about-section p {
             font-size: 18px;
             color: #B0B0B0;
             margin-bottom: 20px;
         }
+        .commands-section {
+            margin: 20px 0;
+            text-align: left;
+        }
+        .commands-section ul {
+            list-style: none;
+            background-color: #1A1A1A;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .commands-section li {
+            font-size: 16px;
+            color: #B0B0B0;
+            margin: 10px 0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .copy-button {
+            background-color: #B0B0B0;
+            color: #1C2526;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        .copy-button:hover {
+            background-color: #FFFFFF;
+        }
+        .features {
+            margin: 20px 0;
+            text-align: left;
+            background-color: #1A1A1A;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .features ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .features li {
+            font-size: 18px;
+            color: #B0B0B0;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .features li::before {
+            content: '✔';
+            color: #00FF00;
+            position: absolute;
+            left: -20px;
+            font-size: 18px;
+        }
+        .docs, .privacy {
+            margin: 20px 0;
+        }
         footer {
             background-color: #121212;
             padding: 20px;
             text-align: center;
             color: #B0B0B0;
-            position: relative;
+            position: The current date and time is 01:27 PM CEST on Saturday, September 20, 2025.
             bottom: 0;
             width: 100%;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
@@ -112,7 +181,35 @@
                 ps[0].textContent = 'HackerOS is based on Debian Testing distribution, uses xanmod lts kernel and is intended for regular users, gamers and cybersecurity enthusiasts.';
                 ps[1].textContent = 'Our mission is to create an efficient and user-friendly environment for exploring the world of technology, security and games.';
                 document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
+                document.querySelector('.commands-section h2').textContent = 'HackerOS Commands';
+                document.querySelector('.hacker-mode h2').textContent = 'Hacker Mode';
+                document.querySelector('.hacker-mode p').textContent = 'Gaming session launched via gamescope';
+                document.querySelector('.features h2').textContent = 'What does HackerOS include?';
+                const featureItems = document.querySelectorAll('.features li');
+                featureItems[0].textContent = 'Xanmod LTS kernel';
+                featureItems[1].textContent = 'Preinstalled firmware';
+                featureItems[2].textContent = 'HackerOS proprietary games';
+                featureItems[3].textContent = 'Specialized commands';
+                featureItems[4].textContent = 'Based on Debian Testing, balancing frequent updates with stability (HackerOS is like a stable Arch Linux)';
+                featureItems[5].textContent = 'Uses Vivaldi browser';
+                featureItems[6].textContent = 'Includes a "cybersecurity" edition with specialized tools';
+                featureItems[7].textContent = 'Uses KDE Plasma desktop environment';
+                featureItems[8].textContent = 'Continuously developed Polish Linux distribution';
+                document.querySelector('.docs h2').textContent = 'Documentation';
+                document.querySelector('.docs p').textContent = 'Coming soon';
+                document.querySelector('.privacy h2').textContent = 'Privacy Policy';
+                document.querySelector('.privacy p').textContent = 'Coming soon';
             }
+
+            const copyButtons = document.querySelectorAll('.copy-button');
+            copyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const commandText = button.previousElementSibling.textContent;
+                    navigator.clipboard.writeText(commandText).then(() => {
+                        alert('Command copied to clipboard!');
+                    });
+                });
+            });
         });
     </script>
 </head>
@@ -131,9 +228,56 @@
         </nav>
     </header>
     <section class="about-section">
+        <img src="installed-hackeros.png" alt="HackerOS Installed">
         <h1>O HackerOS</h1>
         <p>HackerOS bazuje na dystrybucji Debian Testing, wykorzystuje jądro xanmod lts i jest przeznaczony dla zwykłych użytkowników, graczy i entuzjastów cyberbezpieczeństwa.</p>
         <p>Naszą misją jest stworzenie wydajnego i przyjaznego użytkownikowi środowiska do eksploracji świata technologii, bezpieczeństwa i gier.</p>
+        <div class="commands-section">
+            <h2>Komendy HackerOS</h2>
+            <ul>
+                <li><span>hacker-update</span> <button class="copy-button">Kopiuj</button> (aktualizuje snapa apt flatpaka firmware) narzędzie napisane w go</li>
+                <li><span>hacker</span> <button class="copy-button">Kopiuj</button> (manager pakietów możesz go używać zamiast apt)</li>
+                <li><span>setup-hackeros</span> <button class="copy-button">Kopiuj</button> (instaluje sterowniki i specjalne jądro xanmod lts polecane dla graczy z kartami graficznymi nvidia)</li>
+                <li><span>hacker-unpack</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do gier cyberbezpieczeństwa i inne polecane narzędzia przez hackeros)</li>
+                <li><span>hacker-unpack-cybersecurity</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do cyberbezpieczeństwa)</li>
+                <li><span>hacker-unpack-gaming</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do gier)</li>
+                <li><span>hacker-unpack-gaming-noroblox</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do gier bez robloxa)</li>
+                <li><span>hacker-unpack-emulators</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia emulatory)</li>
+                <li><span>hacker-mode-install</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia dla hacker mode)</li>
+                <li><span>hacker-syslog</span> <button class="copy-button">Kopiuj</button> (pokazuje logi systemowe)</li>
+                <li><span>hacker-commands</span> <button class="copy-button">Kopiuj</button> (pokazuje listę komend)</li>
+                <li><span>hacker-devtools</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do programowania)</li>
+                <li><span>hacker-add-ons</span> <button class="copy-button">Kopiuj</button> (instaluje dodatki polecane przez hackeros)</li>
+                <li><span>hacker-unpack-g-s</span> <button class="copy-button">Kopiuj</button> (instaluje narzędzia do gier i cyberbezpieczeństwa)</li>
+            </ul>
+        </div>
+        <div class="hacker-mode">
+            <h2>Hacker Mode</h2>
+            <p>Sesja do gier uruchamiana przez gamescope</p>
+            <img src="hacker-mode.png" alt="Hacker Mode">
+        </div>
+        <div class="features">
+            <h2>Co oferuje HackerOS?</h2>
+            <ul>
+                <li>Jądro xanmod LTS dla optymalnej wydajności</li>
+                <li>Preinstalowany firmware dla lepszej kompatybilności</li>
+                <li>Własne gry HackerOS</li>
+                <li>Specjalistyczne komendy systemowe</li>
+                <li>Bazuje na Debianie Testing, zapewniając równowagę między aktualizacjami a stabilnością (HackerOS to stabilny odpowiednik Arch Linuxa)</li>
+                <li>Przeglądarka Vivaldi dla nowoczesnego przeglądania</li>
+                <li>Edycja „cybersecurity” z narzędziami do bezpieczeństwa</li>
+                <li>Środowisko graficzne KDE Plasma dla intuicyjnej obsługi</li>
+                <li>Ciągle rozwijana polska dystrybucja Linuksa</li>
+            </ul>
+        </div>
+        <div class="docs">
+            <h2>Dokumentacja</h2>
+            <p>Coming soon</p>
+        </div>
+        <div class="privacy">
+            <h2>Polityka prywatności</h2>
+            <p>Coming soon</p>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 HackerOS. Wszelkie prawa zastrzeżone.</p>
