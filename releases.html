@@ -136,52 +136,61 @@
             } else {
                 document.documentElement.lang = 'en';
                 document.querySelector('.releases-section h1').textContent = 'HackerOS Releases';
-
-                // Update for V3.0
+                // Update for V3.1
                 const releases = document.querySelectorAll('.release');
-                releases[0].querySelector('h2').textContent = 'HackerOS V3.0';
-                releases[0].querySelector('p').textContent = 'The latest major release with significant upgrades in performance, security, and compatibility.';
+                releases[0].querySelector('h2').textContent = 'HackerOS V3.1';
+                releases[0].querySelector('p').textContent = 'The latest version with many known bugs fixed from HackerOS V3.0.';
                 releases[0].querySelectorAll('h3')[0].textContent = 'Release Dates:';
-                const v3Lis = releases[0].querySelectorAll('ul')[0].querySelectorAll('li');
+                const v31Lis = releases[0].querySelectorAll('ul')[0].querySelectorAll('li');
+                v31Lis[0].textContent = 'HackerOS Official: 20.09.2025';
+                v31Lis[1].textContent = 'HackerOS Cybersecurity: 20.09.2025';
+                releases[0].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v31Changes = releases[0].querySelectorAll('ul')[1].querySelectorAll('li');
+                v31Changes[0].textContent = 'Updated to the latest Debian Testing.';
+                v31Changes[1].textContent = 'Fixed issues with wallpapers.';
+                v31Changes[2].textContent = 'Fixed kernel-related bugs.';
+                v31Changes[3].textContent = 'Added new game The Racer and new application HackerOS Welcome.';
+                // Update for V3.0
+                releases[1].querySelector('h2').textContent = 'HackerOS V3.0';
+                releases[1].querySelector('p').textContent = 'The latest major release with significant upgrades in performance, security, and compatibility.';
+                releases[1].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v3Lis = releases[1].querySelectorAll('ul')[0].querySelectorAll('li');
                 v3Lis[0].textContent = 'HackerOS Official: 13.09.2025';
                 v3Lis[1].textContent = 'HackerOS Nvidia: 13.09.2025';
                 v3Lis[2].textContent = 'HackerOS Cybersecurity: 13.09.2025';
-                releases[0].querySelectorAll('h3')[1].textContent = 'Changelog:';
-                const v3Changes = releases[0].querySelectorAll('ul')[1].querySelectorAll('li');
+                releases[1].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v3Changes = releases[1].querySelectorAll('ul')[1].querySelectorAll('li');
                 v3Changes[0].textContent = 'Upgraded to latest Debian Testing base.';
                 v3Changes[1].textContent = 'Improved Nvidia driver support for better gaming performance.';
                 v3Changes[2].textContent = 'Added advanced cybersecurity tools like enhanced firewalls and intrusion detection.';
                 v3Changes[3].textContent = 'Optimized kernel for faster boot times and reduced resource usage.';
                 v3Changes[4].textContent = 'Bug fixes and stability improvements from user feedback.';
-
                 // Update for V2.9
-                releases[1].querySelector('h2').textContent = 'HackerOS V2.9';
-                releases[1].querySelector('p').textContent = 'Latest stable release with improved performance and security features.';
-                releases[1].querySelectorAll('h3')[0].textContent = 'Release Dates:';
-                const v29Lis = releases[1].querySelectorAll('ul')[0].querySelectorAll('li');
+                releases[2].querySelector('h2').textContent = 'HackerOS V2.9';
+                releases[2].querySelector('p').textContent = 'Latest stable release with improved performance and security features.';
+                releases[2].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v29Lis = releases[2].querySelectorAll('ul')[0].querySelectorAll('li');
                 v29Lis[0].textContent = 'HackerOS Official: 01.01.2025';
                 v29Lis[1].textContent = 'HackerOS Nvidia: 01.01.2025';
                 v29Lis[2].textContent = 'HackerOS Cybersecurity: 01.01.2025';
-                releases[1].querySelectorAll('h3')[1].textContent = 'Changelog:';
-                const v29Changes = releases[1].querySelectorAll('ul')[1].querySelectorAll('li');
+                releases[2].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v29Changes = releases[2].querySelectorAll('ul')[1].querySelectorAll('li');
                 v29Changes[0].textContent = 'Enhanced security patches.';
                 v29Changes[1].textContent = 'Improved compatibility with newer hardware.';
                 v29Changes[2].textContent = 'Added new developer tools.';
-
                 // Update for V2.8
-                releases[2].querySelector('h2').textContent = 'HackerOS V2.8';
-                releases[2].querySelector('p').textContent = 'Previous release with enhanced tools for developers.';
-                releases[2].querySelectorAll('h3')[0].textContent = 'Release Dates:';
-                const v28Lis = releases[2].querySelectorAll('ul')[0].querySelectorAll('li');
+                releases[3].querySelector('h2').textContent = 'HackerOS V2.8';
+                releases[3].querySelector('p').textContent = 'Previous release with enhanced tools for developers.';
+                releases[3].querySelectorAll('h3')[0].textContent = 'Release Dates:';
+                const v28Lis = releases[3].querySelectorAll('ul')[0].querySelectorAll('li');
                 v28Lis[0].textContent = 'HackerOS Official: 01.06.2024';
                 v28Lis[1].textContent = 'HackerOS Nvidia: 01.06.2024';
                 v28Lis[2].textContent = 'HackerOS Cybersecurity: 01.06.2024';
-                releases[2].querySelectorAll('h3')[1].textContent = 'Changelog:';
-                const v28Changes = releases[2].querySelectorAll('ul')[1].querySelectorAll('li');
+                releases[3].querySelectorAll('h3')[1].textContent = 'Changelog:';
+                const v28Changes = releases[3].querySelectorAll('ul')[1].querySelectorAll('li');
                 v28Changes[0].textContent = 'Introduced new development environments.';
                 v28Changes[1].textContent = 'Fixed known bugs from previous versions.';
                 v28Changes[2].textContent = 'Improved user interface elements.';
-
                 document.querySelector('footer p').textContent = '© 2025 HackerOS. All rights reserved.';
             }
         });
@@ -204,8 +213,24 @@
     <section class="releases-section">
         <h1>Wydania HackerOS</h1>
         <div class="release">
+            <h2>HackerOS V3.1</h2>
+            <p>Najnowsza wersja, poprawiono wiele znanych błędów z HackerOS V3.0.</p>
+            <h3>Data wydania:</h3>
+            <ul>
+                <li>HackerOS Official: 20.09.2025</li>
+                <li>HackerOS Cybersecurity: 20.09.2025</li>
+            </ul>
+            <h3>Changelog:</h3>
+            <ul>
+                <li>Zaktualizowana baza do najnowszego Debian Testing.</li>
+                <li>Naprawiono błędy z tapetami.</li>
+                <li>Naprawiono błędy z jądrem.</li>
+                <li>Dodano nową grę The Racer i nową aplikację HackerOS Welcome.</li>
+            </ul>
+        </div>
+        <div class="release">
             <h2>HackerOS V3.0</h2>
-            <p>Najnowsza główna wersja z znacznymi ulepszeniami: zmieniono z jadra xanmod na xanmod lts (lepsza oblsuga urzadzeń)</p>
+            <p>Najnowsza główna wersja z znacznymi ulepszeniami: zmieniono z jądra xanmod na xanmod lts (lepsza obsługa urządzeń).</p>
             <h3>Data wydania:</h3>
             <ul>
                 <li>HackerOS Official: 13.09.2025</li>
@@ -217,7 +242,7 @@
                 <li>Zaktualizowano bazę do najnowszego Debian Testing.</li>
                 <li>Poprawiono wsparcie dla sterowników Nvidia dla lepszej wydajności w grach.</li>
                 <li>Dodano zaawansowane narzędzia cybersecurity, takie jak ulepszone firewalle i wykrywanie intruzów.</li>
-                <li>Poprawki błędów, dodano i ulepszono narzedzia cli oraz gry hackeros.</li>
+                <li>Poprawki błędów, dodano i ulepszono narzędzia cli oraz gry hackeros.</li>
             </ul>
         </div>
         <div class="release">
