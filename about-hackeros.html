@@ -284,7 +284,145 @@
         </div>
         <div class="privacy">
             <h2>Polityka prywatności</h2>
-            <p>Coming soon</p>
+            <p>
+                Polityka prywatności — HackerOS
+
+Niniejsza Polityka Prywatności wyjaśnia, jakie dane osobowe i informacje zbiera HackerOS, w jaki sposób są one wykorzystywane, przechowywane i chronione oraz jakie prawa przysługują użytkownikom. HackerOS to system operacyjny opracowany przez zespół (autorem głównym jest Michał). Polityka dotyczy instalacji systemu, korzystania z oficjalnych narzędzi i usług dostarczanych wraz z HackerOS (np. mechanizmy aktualizacji, menedżer pakietów `hacker.sh`, narzędzia publikacji).
+
+> Jeśli masz pytania dotyczące polityki prywatności, skontaktuj się: hackeros068@gmail.com.
+
+---
+
+1. Zakres i zasady
+
+Niniejsza polityka dotyczy wyłącznie danych zbieranych i przetwarzanych przez oficjalne komponenty projektu HackerOS i usługi powiązane (serwery aktualizacji, repozytoria, panel publikacji). Nie obejmuje danych gromadzonych przez osoby trzecie lub oprogramowanie spoza oficjalnych repozytoriów, chyba że wyraźnie to wskazano.
+Przetwarzanie odbywa się zgodnie z obowiązującym prawem (w tym RODO/GDPR, jeżeli ma zastosowanie) oraz na zasadach minimalizacji danych i przejrzystości.
+
+---
+
+2. Administrator danych
+
+Administratorem danych jest zespół projektu HackerOS. Dane kontaktowe administratora:
+
+Email: hackeros068@gmail.com
+
+---
+
+3. Jakie dane zbieramy
+
+Poniżej opisane kategorie obejmują dane, które mogą być zbierane przez system i powiązane usługi.
+3.1 Dane dostarczone bezpośrednio przez użytkownika
+
+Konto użytkownika w usługach online (np. forum, panel publikacji) — e-mail, nazwa użytkownika, opcjonalne dane kontaktowe.
+Zgłoszenia błędów, raporty, logi przesyłane dobrowolnie przez użytkownika.
+
+3.2 Dane techniczne i diagnostyczne
+
+Informacje o sprzęcie i oprogramowaniu: architektura CPU, wersja kernela, wersje pakietów, identyfikatory GPU (np. model), informacje o przestrzeni dyskowej i pamięci — tylko w zakresie koniecznym do diagnostyki i raportów błędów.
+Logi systemowe i crash reporty — tylko jeśli użytkownik wyrazi zgodę na ich wysłanie do zespołu developerskiego.
+Adres IP i dane sieciowe przy połączeniu z usługami aktualizacji (rejestrowane tymczasowo w celu bezpieczeństwa i zapobiegania nadużyciom).
+
+3.3 Dane telemetryczne (opcjonalne)
+
+Telemetria dot. użycia funkcji (np. które moduły są używane, statystyki pobrań aktualizacji) — zbierana tylko w trybie opt‑in (użytkownik musi wyrazić zgodę podczas instalacji lub później). Telemetria jest agregowana i anonimizowana tam, gdzie to możliwe.
+
+3.4 Pliki i dane użytkownika
+
+HackerOS nie przegląda ani nie zbiera treści prywatnych plików z katalogu `/home` w celu analiz czy backupów, chyba że użytkownik celowo i dobrowolnie udostępni plik (np. w zgłoszeniu błędu) lub skonfiguruje usługę backupu/publikacji, która to wymaga.
+
+---
+
+4. Cele przetwarzania danych i podstawa prawna
+
+Dane są przetwarzane w następujących celach:
+
+Świadczenie usług aktualizacji i dystrybucji:** przenoszenie i udostępnianie obrazów ISO/rootfs, obsługa pobrań i generowanie statystyk pobrań. (Podstawa: niezbędność do wykonania umowy/usługi lub usprawiedliwiony interes administracji projektu).
+Debugging i wsparcie techniczne:** analiza crash reportów i logów przesłanych przez użytkownika. (Podstawa: zgoda użytkownika lub niezbędność do wykonania działania na żądanie użytkownika).
+Poprawa jakości i telemetria (opcjonalnie):** agregowane metryki użycia systemu w celu optymalizacji. (Podstawa: zgoda użytkownika).
+Bezpieczeństwo i zapobieganie nadużyciom:** wykrywanie ataków, logowanie prób dostępu. (Podstawa: uzasadniony interes — bezpieczeństwo systemu).
+Kontakt i powiadomienia:** informowanie o krytycznych aktualizacjach, powiadomieniach bezpieczeństwa czy sprawach administracyjnych. (Podstawa: niezbędność do wykonania usługi / uzasadniony interes).
+
+---
+
+## 5. Udostępnianie danych i strony trzecie
+
+HackerOS może współpracować z zaufanymi dostawcami hostingowymi, analitycznymi i usługami CI/CD (np. GitHub Actions, SourceForge) w celu publikacji obrazów i budowy systemu. Tacy dostawcy przetwarzają dane na zlecenie projektu i muszą stosować odpowiednie zabezpieczenia.
+Dane osobowe nie są sprzedawane ani przekazywane stronom trzecim w celach marketingowych.
+W przypadkach wymaganych przepisami prawa (np. postępowanie sądowe) HackerOS może ujawnić dane organom ścigania zgodnie z obowiązującymi przepisami.
+
+---
+
+6. Ciasteczka i technologie śledzące (jeśli dotyczy)
+
+Oficjalna strona projektu i panel publikacji mogą używać ciasteczek (cookies) i technologii śledzących do sesji logowania i analityki. Użytkownik ma możliwość zarządzania zgodami w ustawieniach strony.
+
+---
+
+7. Przechowywanie danych i okres retencji
+
+Dane operacyjne (np. logi serwera, adresy IP) są przechowywane przez okres nie dłuższy niż jest konieczny do celów bezpieczeństwa i diagnostyki (np. 30–90 dni), chyba że przepisy prawa nakazują dłuższe przechowywanie.
+Raporty przesłane przez użytkownika i powiązane z nimi dane mogą być przechowywane dłużej, jeśli użytkownik wyraził na to zgodę lub jeśli jest to konieczne do rozwiązania problemu.
+Kopie zapasowe systemu publikowane jako release (ISO/.tar.gz) przechowywane są zgodnie z polityką przechowywania artefaktów projektu (np. do momentu usunięcia release lub przez okres X lat — uzupełnić politykę).
+
+---
+
+## 8. Bezpieczeństwo danych
+
+Zespół HackerOS stosuje techniczne i organizacyjne środki ochrony danych, takie jak szyfrowanie kanałów komunikacji (TLS/HTTPS), ograniczanie dostępu, regularne aktualizacje serwerów i polityki haseł.
+Mimo zastosowanych zabezpieczeń żadna metoda transmisji danych przez Internet nie jest całkowicie bezpieczna; ryzyko musi być akceptowane przez użytkownika.
+
+---
+
+9. Twoje prawa
+
+Jeśli na mocy obowiązującego prawa Twoje dane osobowe podlegają ochronie, przysługują Ci prawa, w tym:
+
+Prawo dostępu do danych.
+Prawo do sprostowania (rectification).
+Prawo do usunięcia („prawo do bycia zapomnianym”), o ile nie stoi temu na przeszkodzie obowiązek prawny lub uzasadniony interes projektu.
+Prawo do ograniczenia przetwarzania.
+Prawo do przenoszenia danych (data portability) — do formatu maszynowego, jeśli przetwarzanie odbywa się w oparciu o zgodę lub umowę.
+Prawo wniesienia sprzeciwu wobec przetwarzania opartego na uzasadnionym interesie.
+Prawo do wycofania zgody w dowolnym momencie (dotyczy przetwarzania opartego na zgodzie — np. telemetria).
+
+Aby skorzystać z tych praw, skontaktuj się z administratorem pod adresem: `privacy@hackeros.project`.
+Jeżeli uznasz, że Twoje prawa zostały naruszone, możesz złożyć skargę do organu nadzorczego (w Polsce: Prezes Urzędu Ochrony Danych Osobowych).
+
+---
+
+10. Przetwarzanie międzynarodowe
+
+ Jeśli usługi korzystają z dostawców zlokalizowanych poza Europejskim Obszarem Gospodarczym, projekt zapewnia odpowiednie zabezpieczenia (np. standardowe klauzule umowne, inne mechanizmy prawne) lub informuje użytkownika o transferze i ryzykach.
+
+---
+
+11. Dzieci i osoby niepełnoletnie
+
+HackerOS nie jest przeznaczony do użytku wyłącznie przez dzieci. Nie zamierzamy świadomie gromadzić danych osób poniżej 16. roku życia bez zgody opiekuna prawnego. Jeżeli dowiemy się o takim przypadku, podejmiemy działania w celu usunięcia danych.
+
+---
+
+12. Zmiany w polityce prywatności
+
+Zastrzegamy sobie prawo do aktualizacji tej polityki. O wszelkich istotnych zmianach będziemy informować użytkowników poprzez stronę projektu, repozytorium lub mechanizmy aktualizacji systemu.
+Data wejścia w życie aktualnej wersji jest zapisana na początku dokumentu.
+
+---
+
+13. Dodatkowe informacje specyficzne dla HackerOS
+
+Brak skanowania katalogu `/home`:** HackerOS nie będzie automatycznie skanować ani przesyłać zawartości katalogu domowego użytkownika bez wyraźnej zgody.
+Zgoda opt‑in na telemetrię: Wszystkie mechanizmy telemetrii i zbierania anonimowych statystyk są domyślnie wyłączone i wymagają świadomego włączenia przez użytkownika.
+Raporty awarii: Przy zgłaszaniu awarii użytkownik będzie mógł przejrzeć i usunąć wrażliwe fragmenty pliku przed wysłaniem (Najlepiej na discordzie).
+
+---
+
+14. Kontakt
+
+W razie pytań, prośby o dostęp, sprostowanie lub usunięcie danych, skontaktuj się:
+
+Email: hackeros068@gmail.com
+            </p>
         </div>
         <div class="editions">
             <h2>Edycje HackerOS</h2>
