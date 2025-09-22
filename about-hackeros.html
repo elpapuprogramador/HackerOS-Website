@@ -155,7 +155,7 @@
             left: -20px;
             font-size: 18px;
         }
-        .docs, .privacy {
+        .docs, .privacy, .editions {
             margin: 20px 0;
         }
         footer {
@@ -163,7 +163,7 @@
             padding: 20px;
             text-align: center;
             color: #B0B0B0;
-            position: The current date and time is 01:27 PM CEST on Saturday, September 20, 2025.
+            position: relative;
             bottom: 0;
             width: 100%;
             box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
@@ -199,8 +199,16 @@
                 document.querySelector('.docs p').textContent = 'Coming soon';
                 document.querySelector('.privacy h2').textContent = 'Privacy Policy';
                 document.querySelector('.privacy p').textContent = 'Coming soon';
+                document.querySelector('.editions h2').textContent = 'HackerOS Editions';
+                const editionTitles = document.querySelectorAll('.editions h3');
+                editionTitles[0].textContent = 'Official Edition';
+                editionTitles[1].textContent = 'Hydra Edition';
+                editionTitles[2].textContent = 'Cybersecurity Edition';
+                const editionPs = document.querySelectorAll('.editions p');
+                editionPs[0].textContent = 'The Official Edition is a standard edition for users, gamers, and programmers, suitable for practically everyone.';
+                editionPs[1].textContent = 'The Hydra Edition is a copy of the HackerOS edition but with a different look (Garuda-like).';
+                editionPs[2].textContent = 'The Cybersecurity Edition has no visual modifications and is a copy of the Official Edition but designed for cybersecurity enthusiasts (this version includes penetration testing tools, cybersecurity tools, and runs on the Xen kernel known from Qubes OS).';
             }
-
             const copyButtons = document.querySelectorAll('.copy-button');
             copyButtons.forEach(button => {
                 button.addEventListener('click', () => {
@@ -277,6 +285,18 @@
         <div class="privacy">
             <h2>Polityka prywatności</h2>
             <p>Coming soon</p>
+        </div>
+        <div class="editions">
+            <h2>Edycje HackerOS</h2>
+            <h3>Edycja Official</h3>
+            <img src="official-edition.png" alt="Official Edition">
+            <p>Edycja Official jest to zwykła edycja dla użytkowników, graczy, programistów, praktycznie dla każdego.</p>
+            <h3>Edycja Hydra</h3>
+            <img src="hydra-edition.png" alt="Hydra Edition">
+            <p>Edycja Hydra to kopia edycji HackerOS, ale z innym wyglądem (Garuda-like).</p>
+            <h3>Edycja Cybersecurity</h3>
+            <img src="cybersecurity-edition.png" alt="Cybersecurity Edition">
+            <p>Edycja Cybersecurity nie posiada modyfikacji wyglądu, jest to też kopia wersji oficjalnej, ale przeznaczona dla entuzjastów cyberbezpieczeństwa (wersja Cybersecurity posiada narzędzia do testów penetracyjnych, narzędzia do cyberbezpieczeństwa, pod jądro Xen znane z systemu Qubes OS).</p>
         </div>
     </section>
     <footer>
