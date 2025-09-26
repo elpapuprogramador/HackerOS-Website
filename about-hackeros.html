@@ -158,6 +158,33 @@
         .editions {
             margin: 20px 0;
         }
+        .games-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #2F3A44;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .games-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+        .game {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .game img {
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+        .game p {
+            font-size: 18px;
+            color: #B0B0B0;
+        }
         footer {
             background-color: #121212;
             padding: 20px;
@@ -204,6 +231,15 @@
                 editionPs[0].textContent = 'The Official Edition is a standard edition for users, gamers, and programmers, suitable for practically everyone.';
                 editionPs[1].textContent = 'The Hydra Edition is a copy of the HackerOS edition but with a different look (Garuda-like).';
                 editionPs[2].textContent = 'The Cybersecurity Edition has no visual modifications and is a copy of the Official Edition but designed for cybersecurity enthusiasts (this version includes penetration testing tools, cybersecurity tools, and runs on the Xen kernel known from Qubes OS).';
+                document.querySelector('.games-section h2').textContent = 'HackerOS Games';
+                const gameTitles = document.querySelectorAll('.game h3');
+                gameTitles[0].textContent = 'The Racer';
+                gameTitles[1].textContent = 'Starblaster';
+                gameTitles[2].textContent = 'Bit Jump';
+                const gamePs = document.querySelectorAll('.game p');
+                gamePs[0].textContent = 'Become a race car driver, game written in Python';
+                gamePs[1].textContent = 'Game inspired by Galaxy Attack, written in Rust';
+                gamePs[2].textContent = 'Game inspired by Geometry Dash, written in Lua';
             }
             const copyButtons = document.querySelectorAll('.copy-button');
             copyButtons.forEach(button => {
@@ -286,6 +322,27 @@
             <h3>Edycja Cybersecurity</h3>
             <img src="cybersecurity-edition.png" alt="Cybersecurity Edition">
             <p>Edycja Cybersecurity nie posiada modyfikacji wyglądu, jest to też kopia wersji oficjalnej, ale przeznaczona dla entuzjastów cyberbezpieczeństwa (wersja Cybersecurity posiada narzędzia do testów penetracyjnych, narzędzia do cyberbezpieczeństwa, pod jądro Xen znane z systemu Qubes OS).</p>
+        </div>
+    </section>
+    <section class="games-section">
+        <h2>Gry HackerOS</h2>
+        <div class="game">
+            <h3>The Racer</h3>
+            <img src="the-racer.png" alt="The Racer">
+            <img src="the-racer-logo.png" alt="The Racer Logo">
+            <p>Zostań kierowcą wyścigowym, gra napisana w Pythonie</p>
+        </div>
+        <div class="game">
+            <h3>Starblaster</h3>
+            <img src="starblaster.png" alt="Starblaster">
+            <img src="starblaster-logo.png" alt="Starblaster Logo">
+            <p>Gra inspirowana Galaxy Attack, napisana w Rust</p>
+        </div>
+        <div class="game">
+            <h3>Bit Jump</h3>
+            <img src="bit-jump.png" alt="Bit Jump">
+            <img src="bit-jump-logo.png" alt="Bit Jump Logo">
+            <p>Gra inspirowana Geometry Dash, napisana w Lua</p>
         </div>
     </section>
     <footer>
